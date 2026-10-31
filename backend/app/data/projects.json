@@ -1,0 +1,195 @@
+[
+  {
+    "id": "proj-ecommerce-01",
+    "name": "E-Commerce Platform",
+    "description": "Next-generation multi-vendor e-commerce platform with automated payments, real-time inventory, and distributed order processing.",
+    "is_demonstration": true,
+    "current_date": "2026-10-31",
+    "sprint_name": "Sprint 24: Core Payment & Checkout Flow",
+    "sprint_start_date": "2026-10-20",
+    "sprint_end_date": "2026-11-06",
+    "release_deadline": "2026-11-08",
+    "team": [
+      {
+        "id": "dev-01",
+        "name": "Alex Chen",
+        "role": "Senior Backend Engineer",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
+        "email": "alex.chen@devpulse.internal"
+      },
+      {
+        "id": "dev-02",
+        "name": "Sarah Jenkins",
+        "role": "Lead QA & Systems Engineer",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+        "email": "sarah.jenkins@devpulse.internal"
+      },
+      {
+        "id": "dev-03",
+        "name": "Marcus Brody",
+        "role": "Full-Stack Engineer",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus",
+        "email": "marcus.brody@devpulse.internal"
+      },
+      {
+        "id": "dev-04",
+        "name": "Elena Rostova",
+        "role": "DevOps & Frontend Specialist",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Elena",
+        "email": "elena.rostova@devpulse.internal"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "TASK-100",
+        "title": "User Authentication & JWT Microservice",
+        "description": "Implement OAuth2/OIDC and JWT session management for customer and merchant access control.",
+        "assignee": "Alex Chen",
+        "status": "completed",
+        "priority": "high",
+        "progress": 100,
+        "start_date": "2026-10-20",
+        "due_date": "2026-10-25",
+        "dependencies": []
+      },
+      {
+        "id": "TASK-101",
+        "title": "Payment API Development",
+        "description": "Integrate Stripe & PayPal payment gateways, idempotent webhooks, and multi-currency processing.",
+        "assignee": "Alex Chen",
+        "status": "in_progress",
+        "priority": "critical",
+        "progress": 45,
+        "start_date": "2026-10-20",
+        "due_date": "2026-10-29",
+        "dependencies": []
+      },
+      {
+        "id": "TASK-102",
+        "title": "Payment Integration Testing",
+        "description": "End-to-end sandbox validation of payment flows, error handling, refund processing, and card decline scenarios.",
+        "assignee": "Sarah Jenkins",
+        "status": "blocked",
+        "priority": "high",
+        "progress": 10,
+        "start_date": "2026-10-28",
+        "due_date": "2026-11-02",
+        "dependencies": ["TASK-101"]
+      },
+      {
+        "id": "TASK-103",
+        "title": "Order Workflow Testing",
+        "description": "Validate full order state machine: cart to payment authorization, inventory reservation, and fulfillment triggering.",
+        "assignee": "Marcus Brody",
+        "status": "todo",
+        "priority": "high",
+        "progress": 0,
+        "start_date": "2026-11-02",
+        "due_date": "2026-11-05",
+        "dependencies": ["TASK-102"]
+      },
+      {
+        "id": "TASK-104",
+        "title": "Production Release & Deployment",
+        "description": "Blue-green canary rollout to AWS production cluster, smoke verification, database schema migration, and cutover.",
+        "assignee": "Elena Rostova",
+        "status": "todo",
+        "priority": "critical",
+        "progress": 0,
+        "start_date": "2026-11-06",
+        "due_date": "2026-11-08",
+        "dependencies": ["TASK-103"]
+      },
+      {
+        "id": "TASK-105",
+        "title": "Product Catalog Search & Filter",
+        "description": "Elasticsearch clustering for faceted filtering, full-text search, and automated inventory synching.",
+        "assignee": "Marcus Brody",
+        "status": "in_progress",
+        "priority": "medium",
+        "progress": 80,
+        "start_date": "2026-10-22",
+        "due_date": "2026-11-01",
+        "dependencies": []
+      },
+      {
+        "id": "TASK-106",
+        "title": "Shopping Cart & Persistent State",
+        "description": "Redis-backed cart session persistence, guest cart merge, and promotional coupon engine.",
+        "assignee": "Sarah Jenkins",
+        "status": "in_progress",
+        "priority": "medium",
+        "progress": 65,
+        "start_date": "2026-10-24",
+        "due_date": "2026-11-03",
+        "dependencies": []
+      },
+      {
+        "id": "TASK-107",
+        "title": "Checkout Frontend UI Flow",
+        "description": "Modern multi-step checkout UI, address autocompletion, real-time tax calculation, and payment element.",
+        "assignee": "Elena Rostova",
+        "status": "blocked",
+        "priority": "high",
+        "progress": 25,
+        "start_date": "2026-10-26",
+        "due_date": "2026-11-04",
+        "dependencies": ["TASK-101"]
+      },
+      {
+        "id": "TASK-108",
+        "title": "Order History & Transaction Receipts",
+        "description": "Customer dashboard invoice generator, PDF receipt download, and order status tracking.",
+        "assignee": "Marcus Brody",
+        "status": "in_progress",
+        "priority": "low",
+        "progress": 50,
+        "start_date": "2026-10-25",
+        "due_date": "2026-11-03",
+        "dependencies": []
+      },
+      {
+        "id": "TASK-109",
+        "title": "Transactional Email & SMS Notifications",
+        "description": "SendGrid and Twilio template integration for order confirmation, shipping updates, and refund notices.",
+        "assignee": "Elena Rostova",
+        "status": "completed",
+        "priority": "medium",
+        "progress": 100,
+        "start_date": "2026-10-21",
+        "due_date": "2026-10-28",
+        "dependencies": []
+      }
+    ],
+    "qa_bugs": [
+      {
+        "id": "BUG-201",
+        "title": "Payment Gateway webhook signature verification failing under load",
+        "severity": "critical",
+        "status": "open",
+        "related_task_id": "TASK-101",
+        "reported_date": "2026-10-29",
+        "reporter": "Sarah Jenkins"
+      },
+      {
+        "id": "BUG-202",
+        "title": "Stripe 3D-Secure modal fails on mobile Safari redirect",
+        "severity": "high",
+        "status": "open",
+        "related_task_id": "TASK-101",
+        "reported_date": "2026-10-30",
+        "reporter": "Sarah Jenkins"
+      },
+      {
+        "id": "BUG-203",
+        "title": "Cart discount coupon codes not invalidating upon checkout timeout",
+        "severity": "medium",
+        "status": "in_progress",
+        "related_task_id": "TASK-106",
+        "reported_date": "2026-10-28",
+        "reporter": "Marcus Brody"
+      }
+    ]
+  }
+]
+
